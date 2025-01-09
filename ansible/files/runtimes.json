@@ -29,11 +29,11 @@
                 }
             },
             {
-                "kind": "nodejs:20",
+                "kind": "nodejs:12",
                 "default": true,
                 "image": {
                     "prefix": "openwhisk",
-                    "name": "action-nodejs-v20",
+                    "name": "action-nodejs-v12",
                     "tag": "nightly"
                 },
                 "deprecated": false,
@@ -58,26 +58,12 @@
         ],
         "python": [
             {
-                "kind": "python:3.10",
+                "kind": "python:3",
                 "default": true,
                 "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-python-v3.10",
-                    "tag": "nightly"
-                },
-                "deprecated": false,
-                "attached": {
-                    "attachmentName": "codefile",
-                    "attachmentType": "text/plain"
-                }
-            },
-            {
-                "kind": "python:3.11",
-                "default": false,
-                "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-python-v3.11",
-                    "tag": "nightly"
+                    "prefix": "yhf0218",
+                    "name": "action-python-v3.6-ai",
+                    "tag": "latest"
                 },
                 "deprecated": false,
                 "attached": {
