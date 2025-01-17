@@ -122,6 +122,7 @@ class ContainerPool(childFactory: ActorRefFactory => ActorRef,
     case r: Run =>
       // Check if the message is resent from the buffer. Only the first message on the buffer can be resent.
       val isResentFromBuffer = runBuffer.nonEmpty && runBuffer.dequeueOption.exists(_._1.msg == r.msg)
+      println("Hello i am getting called from the receive function")
 
       // Only process request, if there are no other requests waiting for free slots, or if the current request is the
       // next request to process
@@ -133,7 +134,6 @@ class ContainerPool(childFactory: ActorRefFactory => ActorRef,
         }
         val kind = r.action.exec.kind
         val memory = r.action.limits.memory.megabytes.MB
-
         val createdContainer =
           // Schedule a job to a warm container
           ContainerPool
